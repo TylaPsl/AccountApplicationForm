@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Application Form</title>
+    <link rel = "stylesheet" href="index.css">
+    <link href="submit.php">
+    <link href="terms.html">
+    <link href="signature.html">
+    <script src="functions.js"></script>
+</head>
+<body>
+    <div class="heading"> <!--logo and title-->
+    <img class="logo" src="https://drive.google.com/uc?=export=view&id=1GzCxqa3K-qkQwSOGdSG3V87mUYzSmrim">
+    <h2>Account Application Form</h1>
+    </div>
+
+    <div class="form">
+    <form> <!--form-->
+        <div>
+            <h3>Company Details:</h3>
+            <!--company name-->
+            <label for="company">Company legal name:</label>
+            <input type="text" id="company" name="company"> <br><br>
+            <!--trading name-->
+            <label for="trading">Trading name:</label>
+            <input type="text" id="trading" name="trading"><br><br>
+            <!--phone number-->
+            <label for="phone">Business phone number:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+            <!--address-->
+            <label for="address">Business physical address:</label>
+            <input type="text" id="address" name="address"><br><br>
+            <!--postal address-->
+            <label for="postal">Postal address:</label>
+            <input type="text" id="postal" name="postal"><br><br>
+        </div>
+        <div>
+            <h3>Manager Details:</h3>
+            <!--manager name-->
+            <label for="manager">Manager name:</label>
+            <input type="text" id="manager" name="manager"><br><br>
+            <!--manager email-->
+            <label for="memail">Email:</label>
+            <input type="email" id="memail" name="memail"><br><br>
+            <!--manager phone-->
+            <label for="mphone">Phone number:</label>
+            <input type="tel" id="mphone" name="mphone"><br><br>
+        </div>
+        <div>
+            <h3>Accounts Details:</h3>
+            <!--accounts name-->
+            <label for="aname">Contact name:</label>
+            <input type="text" id="aname" name="aname"><br><br>
+            <!--accounts phone-->
+            <label for="aphone">Phone number:</label>
+            <input type="tel" id="aphone" name="aphone"><br><br>
+            <!--accounts email-->
+            <label for="aemail">Accounts email:</label>
+            <input type="email" id="aemail" name="aemail"><br><br>
+        </div>
+        <div>
+            <!--company status-->
+            <h3>Company Status:</h3>
+            <input type="radio" id="llc" name="status" value="llc">
+            <label for="llc">Limited liability company</label><br>
+            <input type="radio" id="se" name="status" value="se">
+            <label for="se">Self employed</label><br>
+            <input type="radio" id="p" name="status" value="p">
+            <label for="p">Partnership</label><br>
+            <input type="radio" id="co" name="status" value="co">
+            <label for="co">Co-operative</label><br>
+            <input type="radio" id="ce" name="status" value="ce">
+            <label for="ce">Corporate entity</label><br><br>
+        </div>
+        <div>
+            <h3>Financial Information:</h3>
+            <!--paid up capital-->
+            <label for="puc">Paid up capital:</label>
+            <input type="number" id="puc" name="puc"><br><br>
+            <!--bank-->
+            <label for="bank">Bank:</label>
+            <input type="text" id="bank" name="bank"><br><br>
+            <!--accountant-->
+            <label for="acc">Accountant:</label>
+            <input type="text" id="acc" name="acc"><br><br>
+        </div>
+        <div>
+            <h3>Declaration:</h3>
+            <p>I declare that the above statements are true and correct. I agree with the <span> <a href="terms.html"> terms and conditions</a> </span>which accompany this document and agree to abide by them.</p>
+            <!--signature-->
+            <form action="submit.php" onsubmit="return onSubmit(this)" method="post"></form>
+            <canvas id="signature" width="300" height="100"></canvas><br>
+            <div>
+              <input type="hidden" name="signature" />
+            </div>
+            <button type="submit">Send</button>
+            <form>
+            <script>
+              var canvas = document.getElementById('signature');
+              export {canvas};
+            </script>
+            <!--date-->
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
+        </div>
+        <!--submit-->
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+</body>
+</html>
