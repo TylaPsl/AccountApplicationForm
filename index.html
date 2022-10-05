@@ -7,6 +7,7 @@
     <link href="submit.php">
     <link href="terms.html">
     <link href="signature.html">
+    <script src="functions.js"></script>
 </head>
 <body>
     <div class="heading"> <!--logo and title-->
@@ -85,41 +86,39 @@
         </div>
         <div>
             <h3>Declaration:</h3>
-            <p>I declare that the above statements are true and correct. I agree with the <span> <a href="terms.html"> terms and conditions</a> </span>which accompany this document and agree to abide by them.</p>
+            <input type="checkbox" id="dec" name="dec">
+            <label for ="dec">I declare that the above statements are true and correct. I agree with the <span> <a href="terms.html"> terms and conditions</a> </span>which accompany this document and agree to abide by them.</label>
             <!--signature-->
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>E-Signature</h1>
-                        <p>Sign in the canvas below and save your signature as an image!</p>
+                        <p>Please sign below</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                         <canvas id="sig-canvas" width="620" height="160">
+                         <canvas id="sig-canvas" width="400" height="160">
                             <script src="functions.js"></script>
-                             Get a better browser, bro.
                          </canvas>
                      </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="btn btn-primary" id="sig-submitBtn">Submit Signature </button>
-                        <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
+                        <script src="functions.js"></script>
+                        <button class="btn btn-primary" id="sig-submitBtn" type="button">
+                            Submit Signature 
+                        </button>
+                        <button class="btn btn-default" id="sig-clearBtn" type="button">Clear Signature</button>
                     </div>
                 </div>
                 <br/>
                 <div class="row">
                     <div class="col-md-12">
-                        <textarea id="sig-dataUrl" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
+                        <script src="functions.js"></script>
+                        <textarea id="sig-dataUrl" class="form-control" rows="5" hidden="true">Data URL for your signature will go here!</textarea>
                     </div>
                 </div>
                 <br/>
-                <div class="row">
-                    <div class="col-md-12">
-                        <img id="sig-image" src="" alt="Your signature will go here!"/>
-                    </div>
-                </div>
             </div>
             <!--date-->
             <label for="date">Date:</label>
