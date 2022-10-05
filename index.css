@@ -36,6 +36,8 @@ p {
 
 /********** class selectors ***********/
 
-#signature {
-    border: 2px solid black;
+#sig-canvas {
+    border: 2px dotted #CCCCCC;
+    border-radius: 15px;
+    cursor: crosshair;
 }
