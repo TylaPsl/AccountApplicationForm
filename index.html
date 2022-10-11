@@ -19,44 +19,68 @@
         <div>
             <h3>Company Details:</h3>
             <!--company name-->
+            <script src="functions.js"></script>
             <label for="company">Company legal name:</label>
-            <input type="text" id="company" name="company"> <br><br>
+            <input type="text" id="company" name="company" size="30"> <br><br>
             <!--trading name-->
             <label for="trading">Trading name:</label>
-            <input type="text" id="trading" name="trading"><br><br>
+            <input type="text" id="trading" name="trading" size="30"><br><br>
             <!--phone number-->
             <label for="phone">Business phone number:</label>
-            <input type="tel" id="phone" name="phone"><br><br>
-            <!--address-->
-            <label for="address">Business physical address:</label>
-            <input type="text" id="address" name="address"><br><br>
+            <input type="tel" id="phone" name="phone" size="13"><br><br>
+            <!--address--> 
+            <h3>Business physical address:</h3>
+            <script src="functions.js"></script>
+            <label for="address">Street address:</label>
+            <input type="text" id="address" name="address" size="30"><br><br>
+            <label for="line2">Address line 2:</label>
+            <input type="text" id="line2" name="line2" size="30"><br><br>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city"><br><br>
+            <label for="suburb">Suburb:</label>
+            <input type="text" id="suburb" name="suburb"><br><br>
+            <label for="postcode">Postal code:</label>
+            <input type="text" id="postcode" name="postcode" maxlength="4" size="2"><br><br>
             <!--postal address-->
-            <label for="postal">Postal address:</label>
-            <input type="text" id="postal" name="postal"><br><br>
+            <h3>Postal address:</h3>
+            <input type="checkbox" id="same" name="same">
+            <label for ="same">Same as physical address</label><br><br>
+            <label for="paddress">Street address:</label>
+            <input type="text" id="paddress" name="paddress" size="30"><br><br>
+            <label for="pline2">Address line 2:</label>
+            <input type="text" id="pline2" name="pline2" size="30"><br><br>
+            <label for="pcity">City:</label>
+            <input type="text" id="pcity" name="pcity"><br><br>
+            <label for="psuburb">Suburb:</label>
+            <input type="text" id="psuburb" name="psuburb"><br><br>
+            <label for="ppostcode">Postal code:</label>
+            <input type="text" id="ppostcode" name="ppostcode" maxlength="4" size="2"><br><br>
         </div>
         <div>
             <h3>Manager Details:</h3>
             <!--manager name-->
             <label for="manager">Manager name:</label>
-            <input type="text" id="manager" name="manager"><br><br>
+            <input type="text" id="manager" name="manager" placeholder="First Name">
+            <input type="text" id="manager2" name="manager2" placeholder="Last Name"><br><br>
             <!--manager email-->
             <label for="memail">Email:</label>
             <input type="email" id="memail" name="memail"><br><br>
             <!--manager phone-->
             <label for="mphone">Phone number:</label>
-            <input type="tel" id="mphone" name="mphone"><br><br>
+            <input type="tel" id="mphone" name="mphone" size="13"><br><br>
         </div>
         <div>
             <h3>Accounts Details:</h3>
             <!--accounts name-->
             <label for="aname">Contact name:</label>
-            <input type="text" id="aname" name="aname"><br><br>
+            <input type="text" id="aname" name="aname" placeholder="First Name">
+            <input type="text" id="aname2" name="aname2" placeholder="Last Name"><br><br>
+            <!--accounts email-->
+            <label for="aemail">Email:</label>
+            <input type="email" id="aemail" name="aemail"><br><br>
             <!--accounts phone-->
             <label for="aphone">Phone number:</label>
-            <input type="tel" id="aphone" name="aphone"><br><br>
-            <!--accounts email-->
-            <label for="aemail">Accounts email:</label>
-            <input type="email" id="aemail" name="aemail"><br><br>
+            <input type="tel" id="aphone" name="aphone" size="13"><br><br>
         </div>
         <div>
             <!--company status-->
@@ -75,11 +99,17 @@
         <div>
             <h3>Financial Information:</h3>
             <!--paid up capital-->
-            <label for="puc">Paid up capital:</label>
-            <input type="number" id="puc" name="puc"><br><br>
+            <label for="puc">Paid up capital: $</label>
+            <input type="number" id="puc" name="puc" max="7"><br><br>
             <!--bank-->
             <label for="bank">Bank:</label>
-            <input type="text" id="bank" name="bank"><br><br>
+            <input type="text" id="bank" size="1" required="true" pattern="\[0-9]{2}\" placeholder="XX" maxlength="2"/>
+            -
+            <input type="text" id="bank" size="2" required="true" pattern="\[0-9]{4}\" placeholder="XXXX" maxlength="4"/>
+            -
+            <input type="text" id="bank" size="5" required="true" pattern="\[0-9]{7}\" placeholder="XXXXXXX" maxlength="7"/>
+            -
+            <input type="text" id="bank" size="1" required="true" pattern="\[0-9]{3}\" placeholder="XXX" maxlength="3"/><br><br>
             <!--accountant-->
             <label for="acc">Accountant:</label>
             <input type="text" id="acc" name="acc"><br><br>
