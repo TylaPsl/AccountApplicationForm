@@ -1,9 +1,32 @@
-// Back button on Ts + Cs
+// BACK BUTTON FOR TS + CS PAGE
 function GoBack() {
     window.history.back();
 }
 
-//Signature button
+
+
+//AUTOFILL TRADING NAME
+document.getElementById('company').addEventListener('change', autofill);
+
+function autofill() {
+  document.getElementById('trading').value = document.getElementById('company').value
+}
+
+
+
+//AUTOFILL POSTAL ADDRESS
+document.getElementById('same').addEventListener('change', copyadd);
+
+function copyadd() {
+    document.getElementById('paddress').value = document.getElementById('address').value;
+    document.getElementById('pline2').value = document.getElementById('line2').value;
+    document.getElementById('psuburb').value = document.getElementById('suburb').value;
+    document.getElementById('pcity').value = document.getElementById('city').value;
+    document.getElementById('ppostcode').value = document.getElementById('postcode').value;
+  }
+
+
+//SIGNATURE
 (function() {
     window.requestAnimFrame = (function(callback) {
       return window.requestAnimationFrame ||
@@ -119,6 +142,8 @@ function GoBack() {
   
     function clearCanvas() {
       canvas.width = canvas.width;
+      ctx.strokeStyle = "#222222";
+      ctx.lineWidth = 4;
     }
   
     // Set up the UI
@@ -139,4 +164,6 @@ function GoBack() {
   
   })();
 
-//Submit button
+
+
+//SUBMIT BUTTON
