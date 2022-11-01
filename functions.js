@@ -26,6 +26,17 @@ function copyadd() {
   }
 
 
+//AUTOFILL ACCOUNTS CONTACT
+document.getElementById('samecont').addEventListener('change', copyadd);
+
+function copyadd() {
+    document.getElementById('aFName').value = document.getElementById('mFName').value;
+    document.getElementById('aLName').value = document.getElementById('mLName').value;
+    document.getElementById('aEmail').value = document.getElementById('mEmail').value;
+    document.getElementById('aPhone').value = document.getElementById('mPhone').value;
+  }
+
+
 //SIGNATURE
 (function() {
     window.requestAnimFrame = (function(callback) {
@@ -163,7 +174,3 @@ function copyadd() {
     }, false);
   
   })();
-
-
-
-//SUBMIT BUTTON
