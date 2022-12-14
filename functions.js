@@ -15,14 +15,14 @@ function autofill() {
 
 
 //AUTOFILL POSTAL ADDRESS
-document.getElementById('same').addEventListener('change', copyadd);
+document.getElementById('same').addEventListener('change', copyit);
 
-function copyadd() {
+function copyit() {
     document.getElementById('paddress').value = document.getElementById('address').value;
     document.getElementById('pline2').value = document.getElementById('line2').value;
     document.getElementById('psuburb').value = document.getElementById('suburb').value;
     document.getElementById('pcity').value = document.getElementById('city').value;
-    document.getElementById('ppostcode').value = document.getElementById('postcode').value;
+    document.getElementById('pzip').value = document.getElementById('zip').value;
   }
 
 
@@ -174,3 +174,88 @@ function copyadd() {
     }, false);
   
   })();
+
+
+
+  // save as pdf
+  function savepdf() {
+    window.jsPDF = window.jspdf.jsPDF
+    const doc = new jsPDF();
+
+
+    doc.text(70,10, 'Account Application Form');
+    doc.text(20,20, 'Company Details:');
+    doc.text(20,30, 'Company Name:');
+    doc.text(65,30, document.getElementById('company').value);
+    doc.text(20,40, 'Trading Name:');
+    doc.text(60,40, document.getElementById('trading').value);
+    doc.text(20,50,'Phone:');
+    doc.text(40,50, document.getElementById('phone').value);
+    doc.text(20,60, 'Company Type:');
+    doc.text(63,60, document.getElementById('type').value);
+
+    doc.text(20,80, 'Physical Address:');
+    doc.text(20,90, 'Address:');
+    doc.text(45,90, document.getElementById('address').value);
+    doc.text(20,100, 'Address line 2:');
+    doc.text(60,100, document.getElementById('line2').value);
+    doc.text(20,110, 'Country:');
+    doc.text(45,110, document.getElementById('country').value);
+    doc.text(20,120, 'City:');
+    doc.text(35,120, document.getElementById('city').value);
+    doc.text(20,130, 'Suburb:');
+    doc.text(42,130, document.getElementById('suburb').value);
+    doc.text(20,140, 'Postcode:');
+    doc.text(48,140, document.getElementById('zip').value);
+
+    doc.text(20,160, 'Postal Address:');
+    doc.text(20,170, 'Address:');
+    doc.text(45,170, document.getElementById('paddress').value);
+    doc.text(20,180, 'Address line 2:');
+    doc.text(60,180, document.getElementById('pline2').value);
+    doc.text(20,190, 'Country:');
+    doc.text(45,190, document.getElementById('pcountry').value);
+    doc.text(20,200, 'City:');
+    doc.text(35,200, document.getElementById('pcity').value);
+    doc.text(20,210, 'Suburb:');
+    doc.text(42,210, document.getElementById('psuburb').value);
+    doc.text(20,220, 'Postcode:');
+    doc.text(48,220, document.getElementById('pzip').value);
+
+    doc.text(20,240, 'Management Contact:');
+    doc.text(20,250, 'First Name:');
+    doc.text(52,250, document.getElementById('mFName').value);
+    doc.text(20,260, 'Last Name:');
+    doc.text(52,260, document.getElementById('mLName').value);
+    doc.text(20,270, 'Email:');
+    doc.text(38,270, document.getElementById('mEmail').value);
+    doc.text(20,280, 'Phone:');
+    doc.text(40,280, document.getElementById('mPhone').value);
+
+    doc.addPage();
+    
+    doc.text(20,20, 'Accounts Contact:');
+    doc.text(20,30, 'First Name:');
+    doc.text(52,30, document.getElementById('aFName').value);
+    doc.text(20,40, 'Last Name:');
+    doc.text(52,40, document.getElementById('aLName').value);
+    doc.text(20,50, 'Email:');
+    doc.text(38,50, document.getElementById('aEmail').value);
+    doc.text(20,60, 'Phone:');
+    doc.text(40,60, document.getElementById('aPhone').value);
+
+    doc.text(20,80, 'Signature:');
+    doc.text(20,90, 'Signed by:');
+    doc.text(50,90, document.getElementById('sName').value);
+    doc.text(20,100, 'Date:');
+    doc.text(35,100, document.getElementById('date').value);
+    doc.text(20,110, 'Signature:');
+
+    var canvas = document.getElementById('sig-canvas');
+    doc.addImage(canvas.toDataURL("image/png"),'PNG', 20, 110);
+    
+    doc.save(`form.pdf`)
+  }
+
+
+
